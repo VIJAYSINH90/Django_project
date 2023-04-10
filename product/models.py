@@ -93,6 +93,8 @@ class Product(models.Model):
     brand = models.ForeignKey(Brand,on_delete=models.CASCADE)
     description = models.TextField()
     price = models.FloatField()
+    quantity = models.PositiveIntegerField(null=True)
+    product_image = models.ImageField(upload_to='_product_images/',null=True)
     
     def __str__(self):
         return self.product_name
@@ -100,17 +102,7 @@ class Product(models.Model):
     class Meta:
         db_table = 'product'
         
-class Vendor_product(models.Model):
-    product = models.ForeignKey(Product,on_delete=models.CASCADE)
-    vendor = models.ForeignKey(Vendor_detail,on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
-    price = models.FloatField()
-    
-    def __str__(self):
-        return self.product
-    
-    class Meta:
-        db_table = 'vendor_product'
+
         
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -121,7 +113,7 @@ class Cart(models.Model):
 class Cart_detail(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    vendorProduct = models.ForeignKey(Vendor_product,on_delete=models.CASCADE)
+    
     quantity = models.PositiveIntegerField()
     price = models.FloatField()
     
@@ -150,18 +142,12 @@ class Order_detail(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
     price = models.FloatField()
-    vendor_product = models.ForeignKey(Vendor_product,on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE,null=True)
     
     class Meta:
         db_table = 'order_detail'
         
-class Vendor_product_images(models.Model):
-    vendor_product = models.ForeignKey(Vendor_product, on_delete=models.CASCADE)
-    vendor = models.ForeignKey(User,on_delete=models.CASCADE)
-    image_url = models.ImageField()
-    
-    class Meta:
-        db_table = 'vendor_product_images'
+
         
 class Feedback(models.Model):
     title = models.CharField(max_length=100)
