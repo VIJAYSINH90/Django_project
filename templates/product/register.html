@@ -1,15 +1,49 @@
-{% extends 'product/Base.html' %}
 {% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  
+  <link rel="icon" href="{% static 'assets/img/favicon/favicon.png' %}" type="image/gif" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>E-Store</title>
+   <!-- plugins:css -->
+   <link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/vendor.bundle.base.css' %}">
+   <!-- endinject -->
+   <!-- Plugin css for this page -->
+   <link rel="stylesheet" href="{% static 'assets/css/dataTables.bootstrap4.css' %}">
+   <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/select.dataTables.min.css' %}">
+   <!-- End plugin css for this page -->
+   <!-- inject:css -->
+   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+   <!-- endinject -->
+   <link rel="icon" href="{% static 'assets/img/favicon/favicon.png' %}" type="image/gif" />
+   <!-- plugins:js -->
+   <script src="{% static 'assets/js/vendor.bundle.base.js' %}"></script>
+   <!-- endinject -->
+   <!-- Plugin js for this page -->
+   <script src="{% static 'assets/js/chart.js/Chart.min.js' %}"></script>
+   <script src="{% static 'assets/js/datatables.net/jquery.dataTables.js' %}"></script>
+   <script src="{% static 'assets/js/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+   <script src="{% static 'assets/js/dataTables.select.min.js' %}"></script>
+ 
+   <!-- End plugin js for this page -->
+   <!-- inject:js -->
+   <script src="{% static 'assets/js/off-canvas.js' %}"></script>
+   <script src="{% static 'assets/js/hoverable-collapse.js' %}"></script>
+   <script src="{% static 'assets/js/template.js' %}"></script>
+   <script src="{% static 'assets/js/settings.js' %}"></script>
+   <script src="{% static 'assets/js/todolist.js' %}"></script>
+   <!-- endinject -->
+   <!-- Custom js for this page-->
+   <script src="{% static 'assets/js/dashboard.js' %}"></script>
+   <script src="{% static 'assets/js/Chart.roundedBarCharts.js' %}"></script>
+   <!-- End custom js for this page-->
 </head>
 <body>
   <div class="container-scroller">
